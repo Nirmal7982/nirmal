@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-This is my first line
-=======
-This is my first text file
->>>>>>> parent of 557e44e (Delete txt)
