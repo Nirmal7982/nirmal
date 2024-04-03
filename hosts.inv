@@ -1,0 +1,13 @@
+ansible_python_interpreter=/usr/bin/python3
+[win]
+192.168.0.113
+
+[win:var]
+ansible_user=nirmal
+ansible_password="Ajul2023jul2023@"
+ansible_port=5986
+ask_pass = False
+ansible_winrm_transport = credssp
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_kerberos_delegation=true
