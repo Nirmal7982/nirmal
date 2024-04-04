@@ -1,0 +1,12 @@
+---
+- name: Check Uptime for Windows Server
+  hosts: win
+  gather_facts: no
+
+  tasks:
+    - name: Get system information
+      win_command: systeminfo
+      register: system_info
+
+    - debug:
+        msg: "Uptime: {{ system_info.stdout_lines | select('match', '^\\s*System Boot Time') | list | first }}"
