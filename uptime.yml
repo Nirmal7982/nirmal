@@ -1,6 +1,6 @@
 ---
 - name: Check Uptime for Windows Server and Send Email
-  hosts: windows
+  hosts: win
   gather_facts: no
 
   tasks:
