@@ -1,6 +1,6 @@
 ---
 - name: Ping Windows Server
-  hosts: windows
+  hosts: win
   gather_facts: no
 
   tasks:
