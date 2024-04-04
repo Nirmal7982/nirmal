@@ -21,13 +21,15 @@
     - name: Save CSV to file
       copy:
         content: "{{ csv_content }}"
-        dest: /tmp/server_uptime.csv
+        dest: "/tmp/server_uptime.csv"
+      delegate_to: localhost
 
     - name: Send email with CSV attachment
       mail:
         to: jvnkumarofficial1993@gmail.com
         subject: "Server Uptime Report"
         body: "Please find the attached CSV file with server uptime information."
-        attach: /tmp/server_uptime.csv
+        attach: "/tmp/server_uptime.csv"
       delegate_to: localhost
+
 
