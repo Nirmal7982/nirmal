@@ -6,3 +6,8 @@
   tasks:
     - name: Ping the Windows server
       win_ping:
+      register: result
+      ansible_winrm_server_cert_validation: ignore
+
+    - debug:
+        var: result
