@@ -34,8 +34,7 @@
           - "jvnkumarofficial1993@gmail.com"
         subject: "Server Uptime Report"
         body: "Please find the attached CSV file with server uptime information."
-        attachments:
-          - "/tmp/server_uptime.csv"
+        attach: "/tmp/server_uptime.csv"
         secure: starttls
       delegate_to: localhost
 
