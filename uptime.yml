@@ -25,11 +25,18 @@
       delegate_to: localhost
 
     - name: Send email with CSV attachment
-      mail:
-        to: jvnkumarofficial1993@gmail.com
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: "Nirmaltestmail1993@gmail.com"
+        password: "zjulhteldpjplbbw"
+        to:
+          - "jvnkumarofficial1993@gmail.com"
         subject: "Server Uptime Report"
         body: "Please find the attached CSV file with server uptime information."
-        attach: "/tmp/server_uptime.csv"
+        attachments:
+          - "/tmp/server_uptime.csv"
+        secure: starttls
       delegate_to: localhost
 
 
