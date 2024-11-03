@@ -1,0 +1,21 @@
+---
+- name: Get vSphere VM Events
+  hosts: localhost
+  vars:
+    vcenter_ip: "192.168.121.143"
+    username: "Administrator@vsphere.local"
+    password: "Ajul2023jul2023@"
+    csv_file: "/tmp/vsphere_vm_events.csv"  # Define the path to the CSV file
+  tasks:
+    - name: Run script to fetch last hour's VM events and append to CSV
+      command: >
+        python3 get_vsphere_vm_events_2.py
+        --vcenter_ip {{ vcenter_ip }}
+        --username {{ username }}
+        --password {{ password }}
+        --csv_file {{ csv_file }}
+      register: vm_events
+
+    - name: Print task result
+      debug:
+        var: vm_events.stdout
